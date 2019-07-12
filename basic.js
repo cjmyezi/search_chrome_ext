@@ -312,7 +312,7 @@ var viewState = {
         viewState.lastOp = (new Date()).getTime();
 
         var origin = "???";
-        var temp = window.location.href.match(/127.0.0.1:8000\/search_api\(baidu|sogou)/g);
+        var temp = window.location.href.match(/127.0.0.1:8000\/search_api\/(baidu|sogou)/g);
         if (temp != null) { //SERP页面
             switch (temp[0]) {
                 case "www.sogou.com/web":

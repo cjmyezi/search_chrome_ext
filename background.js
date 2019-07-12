@@ -1,9 +1,7 @@
 var baseUrl = "http://127.0.0.1:8000";
-//var baseUrl = "http://166.111.138.86:15016";
-var checkUrl = baseUrl + "/user/check/";
-var dataUrl = baseUrl + "/chromeext_ajax/save_interaction";
+var dataUrl = baseUrl + "/chromeext_ajax/save_interaction/";
 var version = "1.0";
-//var debug1 = false;
+//var debug1 = false; 
 var debug1 = true;
 var lastReminder = 0;
 
@@ -44,6 +42,7 @@ function sendInfo(Msg) {
         success: function (data) {
             deleteInfo(key);
         },
+        
         error: function (jqXHR, textStatus, errorThrown) {
             //if (jqXHR.status == 400) {//需要更新
             //    if ((new Date()).getTime() - lastReminder < 10 * 60 * 1000) return;
