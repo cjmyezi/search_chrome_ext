@@ -360,8 +360,8 @@ var viewState = {
         }
         else { //非SERP页面
             if (debug) console.log("extension is working on general page");
-            $(window).unbind('mousemove', viewState.mMove);
-            $(window).unbind('scroll', viewState.mScroll);
+            $(window).bind('mousemove', viewState.mMove);
+            $(window).bind('scroll', viewState.mScroll);
             pageManager.initialize();
             mPage.initialize();
             mRec.initialize();
@@ -415,6 +415,10 @@ var viewState = {
         }
         else {
             msg.type = "general";
+            msg.mouse_moves = JSON.stringify(mRec.getData());
+            msg.origin = origin;
+            msg.query = mPage.getQuery();
+            msg.clicked_results = JSON.stringify(mPage.getClickedResults());
         }
 
         chrome.runtime.sendMessage(msg);
