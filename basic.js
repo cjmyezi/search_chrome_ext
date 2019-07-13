@@ -153,6 +153,7 @@ var pageManager = {
         pageManager.dwell_time = 0;
         pageManager.page_timestamps = new Array();
         pageManager.lastViewTime = pageManager.start_timestamp;
+        
         if (debug) console.log("pageManager initialize");
     },
     /**
@@ -315,16 +316,12 @@ var viewState = {
         var temp = window.location.href.match(/127.0.0.1:8000\/search_api\/(baidu|sogou)/g);
         if (temp != null) { //SERP页面
             switch (temp[0]) {
-                case "www.sogou.com/web":
+                case "127.0.0.1:8000/search_api/sogou":
                     origin = "sogou";
                     break;
 
-                case "www.baidu.com/s":
+                case "127.0.0.1:8000/search_api/baidu":
                     origin = "baidu";
-                    break;
-
-                case "www.so.com/s":
-                    origin = "360";
                     break;
 
                 default:
@@ -380,19 +377,15 @@ var viewState = {
         pageManager.getOut();
         mRec.end();
         var origin = "???";
-        var temp = current_url.match(/www\.(baidu)?(sogou)?(so)?\.com\/(s|web)/g);
+        var temp = current_url.match(/127.0.0.1:8000\/search_api\/(baidu|sogou)/g);
         if (temp != null) { //SERP页面
             switch (temp[0]) {
-                case "www.sogou.com/web":
+                case "127.0.0.1:8000/search_api/sogou":
                     origin = "sogou";
                     break;
 
-                case "www.baidu.com/s":
+                case "127.0.0.1:8000/search_api/baidu":
                     origin = "baidu";
-                    break;
-
-                case "www.so.com/s":
-                    origin = "360";
                     break;
 
                 default:

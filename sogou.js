@@ -1,7 +1,7 @@
 if (debug) console.log("Sogou Main Page is Loaded!");
 
 mPage.initialize = function () {
-    mPage.query = $("#upquery").val();
+    mPage.query = $("#query_input").val();
     mPage.page_id = parseInt($("#pagebar_container span").text());
     mPage.html = document.documentElement.outerHTML;
 };

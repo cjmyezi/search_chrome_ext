@@ -1,6 +1,6 @@
-var debug = false;
+//var debug = false;
 var debug1 = false;
-//var debug = true;
+var debug = true;
 //var debug1 = true;
 var current_url = window.location.href;
 var current_referrer = document.referrer;
@@ -71,7 +71,7 @@ chrome.runtime.sendMessage({log_status: "request"}, function (response) {
             }
             else {
                 var origin = "???";
-                var temp = current_url.match(/127.0.0.1:8000\/search_api\/(baidu|sogou)/g);
+                var temp = current_referrer.match(/127.0.0.1:8000\/search_api\/(baidu|sogou)/g);
                 if (temp != null) { //SERP页面
                     switch (temp[0]) {
                         case "127.0.0.1:8000/search_api/sogou":
