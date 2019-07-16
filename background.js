@@ -1,4 +1,4 @@
-var baseUrl = "http://127.0.0.1:8000";
+var baseUrl = "http://10.129.248.108:8000";
 var dataUrl = baseUrl + "/chromeext_ajax/save_interaction/";
 var version = "1.0";
 //var debug1 = false; 

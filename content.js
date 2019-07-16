@@ -8,7 +8,7 @@ var current_serp_link = "";
 
 function storage_link() {
     //var temp_ref = current_referrer.match(/www\.(baidu)?(sogou)?(so)?\.com\/(s|web)/g);
-	var temp_ref = current_referrer.match(/127.0.0.1:8000\/search_api\/(baidu|sogou)/g);
+	var temp_ref = current_referrer.match(/10.129.248.108:8000\/search_api\/(baidu|sogou)/g);
 	if (temp_ref != null) { //SERP页面直接link的页面,serp_link是自身
         current_serp_link = current_url;
         /**
@@ -71,14 +71,14 @@ chrome.runtime.sendMessage({log_status: "request"}, function (response) {
             }
             else {
                 var origin = "???";
-                var temp = current_referrer.match(/127.0.0.1:8000\/search_api\/(baidu|sogou)/g);
+                var temp = current_referrer.match(/10.129.248.108:8000\/search_api\/(baidu|sogou)/g);
                 if (temp != null) { //SERP页面
-                    switch (temp[0]) {
-                        case "127.0.0.1:8000/search_api/sogou":
+                   switch (temp[0]) {
+                        case "10.129.248.108:8000/search_api/sogou":
                             origin = "sogou";
                             break;
 
-                        case "127.0.0.1:8000/search_api/baidu":
+                        case "10.129.248.108:8000/search_api/baidu":
                             origin = "baidu";
                             break;
 

@@ -313,14 +313,14 @@ var viewState = {
         viewState.lastOp = (new Date()).getTime();
 
         var origin = "???";
-        var temp = window.location.href.match(/127.0.0.1:8000\/search_api\/(baidu|sogou)/g);
+        var temp = window.location.href.match(/10.129.248.108:8000\/search_api\/(baidu|sogou)/g);
         if (temp != null) { //SERP页面
             switch (temp[0]) {
-                case "127.0.0.1:8000/search_api/sogou":
+                case "10.129.248.108:8000/search_api/sogou":
                     origin = "sogou";
                     break;
 
-                case "127.0.0.1:8000/search_api/baidu":
+                case "10.129.248.108:8000/search_api/baidu":
                     origin = "baidu";
                     break;
 
@@ -377,14 +377,14 @@ var viewState = {
         pageManager.getOut();
         mRec.end();
         var origin = "???";
-        var temp = current_url.match(/127.0.0.1:8000\/search_api\/(baidu|sogou)/g);
+        var temp = current_url.match(/10.129.248.108:8000\/search_api\/(baidu|sogou)/g);
         if (temp != null) { //SERP页面
             switch (temp[0]) {
-                case "127.0.0.1:8000/search_api/sogou":
+                case "10.129.248.108:8000/search_api/sogou":
                     origin = "sogou";
                     break;
 
-                case "127.0.0.1:8000/search_api/baidu":
+                case "10.129.248.108:8000/search_api/baidu":
                     origin = "baidu";
                     break;
 
